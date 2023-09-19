@@ -18,11 +18,14 @@
 		</Grid.RowDefinitions>
 		<utu:NavigationBar Content="{Binding Title}" />
 
-		<embed:MauiHost Grid.Row="1"
+		<!--<embed:MauiHost Grid.Row="1"
 						x:Name="mauiContent"
 						VisualElementChanged="OnVisualElementChanged"
-						Source="external:SyncfusionDemoPage" />
-
+						Source="external:SyncfusionDemoPage" />-->
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+			<Button Content="Go To Second Page" Margin="5" Command="{Binding GoToSecond}"/>
+			<Button Content="Go To Import Page" Margin="5" Command="{Binding GoToImport}" />
+		</StackPanel>
 	</Grid>
 
 </Page>

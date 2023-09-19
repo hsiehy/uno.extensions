@@ -63,6 +63,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Presentation\SecondPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <UpToDateCheckInput Remove="Presentation\SecondPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\TreehouseInterface\TreehouseInterface\TreehouseInterface.csproj" />
 		<ProjectReference Include="..\..\..\src\Uno.Extensions.Configuration\Uno.Extensions.Configuration.csproj" />
 		<ProjectReference Include="..\..\..\src\Uno.Extensions.Hosting.UI\Uno.Extensions.Hosting.WinUI.csproj" />
 		<ProjectReference Include="..\..\..\src\Uno.Extensions.Hosting\Uno.Extensions.Hosting.csproj" />
@@ -86,5 +95,8 @@
 	<Import Project="..\..\..\src\Uno.Extensions.Maui.UI\build\Package.targets" />
 	<Import Project="..\..\..\src\Uno.Extensions.Navigation\build\Package.targets" />
 	<Import Project="..\..\..\src\Uno.Extensions.Navigation.UI\build\Package.targets" />
+	<ItemGroup>
+	  <AdditionalFiles Remove="Presentation\SecondPage.xaml" />
+	</ItemGroup>
 
 </Project>

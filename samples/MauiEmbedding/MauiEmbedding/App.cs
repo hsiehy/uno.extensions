@@ -6,7 +6,7 @@ namespace MauiEmbedding;
 public class App : EmbeddingApplication
 {
 	protected Window? MainWindow { get; private set; }
-	protected IHost? Host { get; private set; }
+	public IHost? Host { get; private set; }
 
 	protected async override void OnLaunched(LaunchActivatedEventArgs args)
 	{
@@ -78,13 +78,20 @@ public class App : EmbeddingApplication
 			new ViewMap<MainPage, MainViewModel>()
 		);
 
+		//routes.Register(
+		//	new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
+		//		Nested: new RouteMap[]
+		//		{
+		//			new RouteMap("Main", View: views.FindByViewModel<MainViewModel>()),
+		//			new RouteMap("Second", View: views.FindByViewModel<SecondPageViewModel>())
+		//		}
+		//	)
+		//);
+
 		routes.Register(
-			new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
-				Nested: new RouteMap[]
-				{
+			new RouteMap[] {
+					new RouteMap("", View: views.FindByViewModel<ShellViewModel>()),
 					new RouteMap("Main", View: views.FindByViewModel<MainViewModel>()),
-				}
-			)
-		);
+					});
 	}
 }
